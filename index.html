@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="PVBench: Quantifying Physical Plausibility in Video Generation with Object-Level Physical Measurements." />
+  <title>PVBench — Physical Plausibility in Video Generation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <header class="site-nav">
+    <a class="brand" href="#top" aria-label="PVBench home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>PVBench</span>
+    </a>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#taxonomy">Taxonomy</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> A physical video benchmark</div>
+        <h1>Can generated videos<br /><em>obey the laws of physics?</em></h1>
+        <p class="lede">PVBench turns physical plausibility from a visual impression into computable, object-level measurements for generated videos.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#overview">Explore PVBench <span>↓</span></a>
+          <a class="button button-ghost" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer"><span class="github-dot">◉</span> Code</a>
+          <a class="button button-ghost is-pending" href="#release">Paper <span>↗</span></a>
+        </div>
+        <div class="author-line">
+          <strong>Kaiwei Chen</strong>, Moran Li, Zhenye Gan, Yabiao Wang, Chengjie Wang,<br class="desktop-only" /> Kexin Zhang, Yong Liu, Jiangning Zhang
+          <span class="affiliations">Zhejiang University · ByteDance Inc. · Tencent</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="PVBench physical measurement preview">
+        <div class="visual-glow"></div>
+        <div class="measurement-card card-main">
+          <div class="card-top"><span class="status-chip"><i></i> PHYSICAL TRACE</span><span class="frame-count">FRAME 024 / 048</span></div>
+          <div class="scene-stage">
+            <div class="scene-grid"></div>
+            <div class="trajectory trajectory-one"></div>
+            <div class="trajectory trajectory-two"></div>
+            <div class="object object-ball"><span></span></div>
+            <div class="object object-block"></div>
+            <div class="measure-line measure-x"><b>0.82 m</b></div>
+            <div class="measure-line measure-y"><b>6D POSE</b></div>
+            <div class="axis"><span>X</span><span>Y</span><span>Z</span></div>
+          </div>
+          <div class="card-bottom"><span>Object-level measurement</span><strong>PLAUSIBILITY <b>0.86</b></strong></div>
+        </div>
+        <div class="floating-stat stat-one"><span>46</span><small>dimensions</small></div>
+        <div class="floating-stat stat-two"><span>7</span><small>domains</small></div>
+        <div class="scan-ring ring-one"></div><div class="scan-ring ring-two"></div>
+      </div>
+    </section>
+
+    <section class="ticker"><div class="ticker-track"><span>SEMANTIC FIDELITY</span><b>✦</b><span>GEOMETRIC CONSISTENCY</span><b>✦</b><span>KINEMATIC PERSISTENCE</span><b>✦</b><span>MECHANICAL PLAUSIBILITY</span><b>✦</b><span>SEMANTIC FIDELITY</span><b>✦</b><span>GEOMETRIC CONSISTENCY</span><b>✦</b></div></section>
+
+    <section id="overview" class="section shell">
+      <div class="section-heading"><div><span class="section-kicker">01 / WHY PVBENCH</span><h2>Looking real is not<br /><em>the same as being physical.</em></h2></div><p>Modern video generators can produce visually compelling results while still violating geometry, kinematics, dynamics, and conservation laws. PVBench provides a unified way to measure those failures.</p></div>
+      <div class="stat-grid">
+        <article class="stat-card"><div class="stat-number">600</div><div class="stat-label">prompt groups</div><p>Carefully designed scenes with matched T2V and I2V variants.</p></article>
+        <article class="stat-card stat-card-accent"><div class="stat-number">46</div><div class="stat-label">evaluation dimensions</div><p>Three assessment layers organized across seven domains.</p></article>
+        <article class="stat-card"><div class="stat-number">25</div><div class="stat-label">physical dimensions</div><p>Object-intrinsic, object-space, and object-spatiotemporal properties.</p></article>
+        <article class="stat-card"><div class="stat-number">30<span>%</span></div><div class="stat-label">embodied-agent scenes</div><p>Challenging scenarios with robots, humanoids, quadrupeds, and multi-agent systems.</p></article>
+      </div>
+    </section>
+
+    <section id="taxonomy" class="section section-dark">
+      <div class="shell">
+        <div class="section-heading light"><div><span class="section-kicker">02 / THE BENCHMARK</span><h2>From pixels to<br /><em>physical quantities.</em></h2></div><p>PVBench combines specialized vision models, physical-law checks, and MLLM-assisted judgments to evaluate what generated videos actually preserve.</p></div>
+        <div class="taxonomy-layout">
+          <div class="taxonomy-copy">
+            <div class="layer-row semantic"><span class="layer-index">01</span><div><h3>Semantic layer</h3><p>Condition and semantic fidelity; behavioral, causal, and commonsense consistency.</p></div><b>14 dims</b></div>
+            <div class="layer-row perceptual"><span class="layer-index">02</span><div><h3>Perceptual layer</h3><p>Subject consistency, aesthetic quality, temporal stability, and motion smoothness.</p></div><b>7 dims</b></div>
+            <div class="layer-row physical active"><span class="layer-index">03</span><div><h3>Physical layer</h3><p>Geometry, materials, kinematics, mechanics, and conservation laws.</p></div><b>25 dims</b></div>
+          </div>
+          <div class="taxonomy-visual"><img src="assets/overview.png" alt="PVBench metric taxonomy overview" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell pipeline-section">
+      <div class="section-heading"><div><span class="section-kicker">03 / DATA CURATION</span><h2>Designed for<br /><em>measurable physics.</em></h2></div><p>Each prompt is constructed around a target dimension, an observable scene, and a verifiable evaluation signal.</p></div>
+      <div class="pipeline-card"><img src="assets/pipeline.png" alt="PVBench data curation and prompt generation pipeline" /><div class="image-caption"><span>DATA PIPELINE</span><span>Target dimension → scene design → generation → evaluation</span></div></div>
+    </section>
+
+    <section id="results" class="section results-section">
+      <div class="shell">
+        <div class="section-heading light"><div><span class="section-kicker">04 / EVALUATION</span><h2>See where models<br /><em>break the rules.</em></h2></div><p>PVBench reports semantic, perceptual, and physical scores together, making it possible to distinguish a beautiful video from a physically plausible one.</p></div>
+        <div class="results-grid">
+          <div class="result-panel"><div class="panel-label"><span>MODEL COMPARISON</span><span class="panel-dot"></span></div><img src="assets/results.png" alt="PVBench evaluation visualization" /><div class="result-note">Layer-wise evaluation reveals the persistent gap between visual quality and physical plausibility.</div></div>
+          <div class="result-panel heatmap-panel"><div class="panel-label"><span>PHYSICAL SCORE MAP</span><span> T2V / I2V</span></div><img src="assets/heatmaps.png" alt="PVBench T2V and I2V layer heatmaps" /><div class="result-note">Dimension-level scores expose failure patterns hidden by a single global score.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell release-section" id="release">
+      <div class="release-card"><div><span class="section-kicker">OPEN RESEARCH</span><h2>Make video generation<br /><em>physically usable.</em></h2><p>PVBench is designed to help researchers move from “looks good” to “obeys the world.” Code, prompts, and release materials will be linked here as they become available.</p></div><div class="release-actions"><a class="button button-primary" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a><a class="button button-ghost is-pending" href="#citation">Paper &amp; BibTeX <span>↓</span></a></div></div>
+    </section>
+
+    <section id="citation" class="section shell citation-section">
+      <div class="section-heading"><div><span class="section-kicker">05 / CITATION</span><h2>Cite PVBench</h2></div><p>Publication and persistent links will be updated after the public release.</p></div>
+      <div class="citation-box"><button class="copy-button" data-copy="citation-text">Copy</button><code id="citation-text">@inproceedings{pvbench2026,
+  title     = {PVBench: Quantifying Physical Plausibility in Video Generation with Object-Level Physical Measurements},
+  author    = {Chen, Kaiwei and Li, Moran and Gan, Zhenye and Wang, Yabiao and Wang, Chengjie and Zhang, Kexin and Liu, Yong and Zhang, Jiangning},
+  year      = {2026}
+}</code></div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell"><div class="brand"><span class="brand-mark"><span></span><span></span><span></span></span><span>PVBench</span></div><p>Quantifying physical plausibility in video generation.</p><div class="footer-links"><a href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top">Back to top ↑</a></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
