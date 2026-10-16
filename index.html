@@ -18,8 +18,7 @@
     <nav>
       <a href="#overview">Overview</a>
       <a href="#taxonomy">Taxonomy</a>
-      <a href="#results">Results</a>
-      <a href="#leaderboard">Leaderboard</a>
+      <a href="#results">Evaluation &amp; Leaderboard</a>
       <a href="#comparison">Compare</a>
       <a href="#citation">Citation</a>
     </nav>
@@ -81,27 +80,32 @@
 
     <section id="results" class="section results-section">
       <div class="shell">
-        <div class="section-heading light"><div><span class="section-kicker">04 / EVALUATION</span><h2>See where models<br /><em>break the rules.</em></h2></div><p>PVBench reports semantic, perceptual, and physical scores together, making it possible to distinguish a beautiful video from a physically plausible one.</p></div>
-        <div class="results-grid">
-          <div class="result-panel"><div class="panel-label"><span>MODEL COMPARISON</span><span class="panel-dot"></span></div><img src="assets/results.png" alt="PVBench evaluation visualization" /><div class="result-note">Layer-wise evaluation reveals the persistent gap between visual quality and physical plausibility.</div></div>
-          <div class="result-panel heatmap-panel"><div class="panel-label"><span>PHYSICAL SCORE MAP</span><span> T2V / I2V</span></div><img src="assets/heatmaps.png" alt="PVBench T2V and I2V layer heatmaps" /><div class="result-note">Dimension-level scores expose failure patterns hidden by a single global score.</div></div>
+        <div class="section-heading light"><div><span class="section-kicker">04 / EVALUATION + LEADERBOARD</span><h2>See what models<br /><em>actually preserve.</em></h2></div><p>PVBench reports the paper's seven-domain percentile scores together with radar plots and layer-level score maps, making visual quality and physical plausibility directly comparable.</p></div>
+        <div class="results-grid results-single">
+          <div class="result-panel"><div class="panel-label"><span>PAPER RESULTS</span><span>T2V / I2V</span></div><img src="assets/results.png" alt="PVBench seven-domain radar plots and layer score maps for T2V and I2V models" /><div class="result-note">The figure combines seven-domain radar plots with semantic, perceptual, and physical-layer scores; no separate score-map panel is repeated below.</div></div>
         </div>
-      </div>
-    </section>
 
-
-    <section id="leaderboard" class="section shell leaderboard-section">
-      <div class="section-heading"><div><span class="section-kicker">05 / LEADERBOARD</span><h2>Rank what models<br /><em>actually preserve.</em></h2></div><p>The leaderboard is wired for the final benchmark release. Scores stay blank until the selected videos have been evaluated, so this page never presents placeholder numbers as scientific results.</p></div>
-      <div class="leaderboard-card">
-        <div class="leaderboard-head"><div><span class="leaderboard-live"><i></i> RELEASE PREVIEW</span><h3>PVBench leaderboard</h3></div><span class="leaderboard-pending">Scores pending final evaluation</span></div>
-        <div class="leaderboard-table-wrap"><table class="leaderboard-table"><thead><tr><th>Rank</th><th>Model</th><th>T2V</th><th>I2V</th><th>Physical</th><th>Overall</th><th>Status</th></tr></thead><tbody>
-          <tr><td>—</td><td>Seedance 2.5</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
-          <tr><td>—</td><td>MiniMax H3</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
-          <tr><td>—</td><td>Wan 2.1</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
-          <tr><td>—</td><td>Wan 2.2</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
-          <tr><td>—</td><td>LingBot Video</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
-        </tbody></table></div>
-        <p class="leaderboard-footnote">The final table will report model-level aggregate scores together with the 25 physical dimensions and seven benchmark domains.</p>
+        <div class="leaderboard-card results-leaderboard">
+          <div class="leaderboard-head"><div><span class="leaderboard-live"><i></i> PAPER SCORES · PERCENTILE SCALE</span><h3>PVBench leaderboard</h3></div><span class="leaderboard-pending">6 models · T2V + I2V</span></div>
+          <div class="leaderboard-table-wrap"><table class="leaderboard-table"><thead>
+            <tr><th rowspan="2">Config.</th><th rowspan="2">Model</th><th colspan="2">Semantic layer</th><th>Perceptual layer</th><th colspan="4">Physical layer</th></tr>
+            <tr><th title="Conditional &amp; Semantic Fidelity">CSF</th><th title="Behavioral, Causal &amp; Commonsense">BC</th><th title="Perceptual &amp; Temporal Quality">PTQ</th><th title="Geometric &amp; Spatial">GS</th><th title="Material &amp; Field State">MFS</th><th title="Kinematic &amp; Persistence">KP</th><th title="Mechanical &amp; Conservation">MC</th></tr>
+          </thead><tbody>
+            <tr><td rowspan="6">T2V</td><td>SANA-Video 2.0</td><td>55.1</td><td>39.0</td><td>58.2</td><td>47.0</td><td>27.4</td><td>52.2</td><td>18.7</td></tr>
+            <tr><td>Wan2.1</td><td>64.8</td><td>43.7</td><td>63.4</td><td>50.6</td><td>16.4</td><td>55.3<sup>*</sup></td><td>24.8</td></tr>
+            <tr><td>Wan2.2</td><td>73.1</td><td>53.6</td><td>68.1<sup>*</sup></td><td>49.2</td><td>18.1</td><td>52.9</td><td>20.5</td></tr>
+            <tr><td>LingBot-Video</td><td>72.8</td><td>59.8</td><td>58.0</td><td>42.8</td><td>28.9</td><td>51.1</td><td>22.5</td></tr>
+            <tr><td>MiniMax H3</td><td>88.0<sup>*</sup></td><td>79.3<sup>*</sup></td><td>55.4</td><td><strong>52.6</strong></td><td>30.8<sup>*</sup></td><td>51.5</td><td>25.3<sup>*</sup></td></tr>
+            <tr class="leaderboard-highlight"><td>Seedance 2.5</td><td><strong>92.2</strong></td><td><strong>83.3</strong></td><td><strong>68.4</strong></td><td>52.2<sup>*</sup></td><td><strong>47.2</strong></td><td><strong>55.6</strong></td><td><strong>30.0</strong></td></tr>
+            <tr class="config-break"><td rowspan="6">I2V</td><td>SANA-Video 2.0</td><td>56.0</td><td>22.9</td><td>48.4</td><td>35.8</td><td>21.3</td><td>48.0</td><td>19.5</td></tr>
+            <tr><td>Wan2.1</td><td>84.6</td><td>41.1</td><td>59.2</td><td>40.9</td><td>28.0</td><td>53.9</td><td>24.0</td></tr>
+            <tr><td>Wan2.2</td><td>88.6</td><td>55.1</td><td>66.6<sup>*</sup></td><td>45.8</td><td>31.1</td><td>52.6</td><td>23.6</td></tr>
+            <tr><td>LingBot-Video</td><td>80.2</td><td>61.8</td><td>58.1</td><td><strong>50.8</strong></td><td>33.4</td><td><strong>60.7</strong></td><td>26.8<sup>*</sup></td></tr>
+            <tr><td>MiniMax H3</td><td>92.8<sup>*</sup></td><td><strong>79.9</strong></td><td>62.5</td><td>48.9</td><td>34.2<sup>*</sup></td><td>50.7</td><td>20.1</td></tr>
+            <tr class="leaderboard-highlight"><td>Seedance 2.5</td><td><strong>96.8</strong></td><td>79.7<sup>*</sup></td><td><strong>67.7</strong></td><td>50.3<sup>*</sup></td><td><strong>43.4</strong></td><td>54.4<sup>*</sup></td><td><strong>29.0</strong></td></tr>
+          </tbody></table></div>
+          <p class="leaderboard-footnote">CSF: Conditional &amp; Semantic Fidelity · BC: Behavioral, Causal &amp; Commonsense · PTQ: Perceptual &amp; Temporal Quality · GS: Geometric &amp; Spatial · MFS: Material &amp; Field State · KP: Kinematic &amp; Persistence · MC: Mechanical &amp; Conservation. <strong>Bold</strong> marks the highest score within each configuration; <sup>*</sup> marks the second-highest.</p>
+        </div>
       </div>
     </section>
 
