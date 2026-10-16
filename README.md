@@ -8,7 +8,7 @@ Open `index.html` directly, or serve this folder with any static HTTP server. Th
 
 ## Teaser video
 
-The landing page uses a full-screen, pinned video stage inspired by contemporary computer-vision project pages. The current private preview uses an I2V sample at `assets/pvbench-teaser.mp4`; replace it with the approved teaser before public launch. `assets/teaser-poster.svg` remains the fallback poster and is original project artwork.
+The landing page uses a full-screen, pinned video stage inspired by contemporary computer-vision project pages. The current private preview uses `assets/pvbench-teaser.mp4`; replace it with the approved teaser before public launch. `assets/teaser-poster.svg` remains the fallback poster and is original project artwork.
 
 ## Before public release
 
@@ -17,4 +17,5 @@ The landing page uses a full-screen, pinned video stage inspired by contemporary
 - Verify all figures, metrics, author affiliations, and release claims.
 - Keep the website private until the relevant patent filing and release checks are complete.
 - Retain attribution for any third-party assets or template code used in future revisions.
+
 
