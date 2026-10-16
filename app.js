@@ -70,19 +70,27 @@
     sourceId.textContent = item.promptId;
     head.append(modelName, sourceId);
 
-    const placeholder = document.createElement('div');
-    placeholder.className = 'video-placeholder';
-    const mark = document.createElement('span');
-    mark.className = 'placeholder-mark';
-    mark.textContent = model.short;
+    const frame = document.createElement('div');
+    frame.className = 'video-frame';
+    const video = document.createElement('video');
+    video.className = 'comparison-video';
+    video.controls = true;
+    video.preload = 'metadata';
+    video.playsInline = true;
+    video.src = `assets/videos/${model.assetDir}/${modality.toUpperCase()}/${item.promptId}.mp4`;
+    video.setAttribute('aria-label', `${model.name} ${modality.toUpperCase()} video for ${item.promptId}`);
+    frame.appendChild(video);
+
+    const meta = document.createElement('div');
+    meta.className = 'video-meta';
     const title = document.createElement('strong');
-    title.textContent = `${modality.toUpperCase()} video slot`;
+    title.textContent = `${modality.toUpperCase()} · ${model.name}`;
     const note = document.createElement('span');
     note.textContent = model.id === 'lingbot' && modality === 'i2v'
-      ? 'ID is listed in the supplied LingBot I2V record.'
-      : `Add the ${model.name} file for this prompt.`;
-    placeholder.append(mark, title, note);
-    card.append(head, placeholder);
+      ? 'Selected from the supplied LingBot I2V record.'
+      : item.promptId;
+    meta.append(title, note);
+    card.append(head, frame, meta);
     return card;
   };
 

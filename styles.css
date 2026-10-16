@@ -43,3 +43,5 @@ body{font-size:16px}.brand{gap:0}.site-nav nav{font-size:15px;gap:27px}.nav-cta{
 @media(max-width:1200px){.comparison-video-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:900px){.comparison-video-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.comparison-video-grid{grid-template-columns:1fr}.video-placeholder{min-height:230px}}
+/* Local comparison videos. */
+.video-frame{background:#071321;aspect-ratio:16/9}.comparison-video{display:block;width:100%;height:100%;object-fit:cover;background:#071321}.video-meta{display:flex;flex-direction:column;gap:4px;padding:10px 13px 13px;background:#101f33}.video-meta strong{font-size:14px;color:#e8f7ff}.video-meta span{font-size:12px;line-height:1.35;color:#8da8c0}.video-case-card{overflow:hidden}.video-placeholder{aspect-ratio:auto;min-height:0}.video-placeholder strong,.video-placeholder>span{display:none}@media(max-width:560px){.video-meta strong{font-size:15px}.video-meta span{font-size:13px}}

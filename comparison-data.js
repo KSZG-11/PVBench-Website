@@ -4,31 +4,36 @@ window.PVBenchModels = [
     "id": "seedance25",
     "name": "Seedance 2.5",
     "short": "SD 2.5",
-    "fileKey": "seedance25"
+    "fileKey": "seedance25",
+    "assetDir": "Seedance25"
   },
   {
     "id": "minimax-h3",
     "name": "MiniMax H3",
     "short": "H3",
-    "fileKey": "minimax"
+    "fileKey": "minimax",
+    "assetDir": "MiniMaxH3"
   },
   {
     "id": "wan21",
     "name": "Wan 2.1",
     "short": "W2.1",
-    "fileKey": "wan21"
+    "fileKey": "wan21",
+    "assetDir": "Wan21"
   },
   {
     "id": "wan22",
     "name": "Wan 2.2",
     "short": "W2.2",
-    "fileKey": "wan22"
+    "fileKey": "wan22",
+    "assetDir": "Wan22"
   },
   {
     "id": "lingbot",
     "name": "LingBot",
     "short": "LingBot",
     "fileKey": "lingbot",
+    "assetDir": "LingBot",
     "i2vVerifiedFrom": "lingbot_i2v_missing_20260917.txt"
   }
 ];
@@ -237,8 +242,8 @@ window.PVBenchPhysicsCases = [
     "name": "Cross-frame geometric consistency",
     "domain": "Kinematic & persistence",
     "method": "VGGT-Ω + FlowSeek · cross-frame geometry",
-    "keyPrompt": "A straight corridor with repeated columns and textured floor tiles; The camera advances along the center line from one floor mark to another",
-    "promptId": "U46V2-0196",
+    "keyPrompt": "A marble horse statue on a pedestal with detailed surface texture; the camera completes one orbit around the statue.",
+    "promptId": "U46V2-0197",
     "t2vSlot": "PV-019-T2V",
     "i2vSlot": "PV-019-I2V"
   },
