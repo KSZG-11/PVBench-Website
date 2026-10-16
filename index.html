@@ -80,7 +80,7 @@
 
     <section id="results" class="section results-section">
       <div class="shell">
-        <div class="section-heading light"><div><span class="section-kicker">04 / EVALUATION + LEADERBOARD</span><h2>See what models<br /><em>actually preserve.</em></h2></div><p>PVBench reports the paper's seven-domain percentile scores together with radar plots and layer-level score maps, making visual quality and physical plausibility directly comparable.</p></div>
+        <div class="section-heading light"><div><span class="section-kicker">04 / EVALUATION &amp; LEADERBOARD</span><h2>See what models<br /><em>actually preserve.</em></h2></div><p>PVBench reports the paper's seven-domain percentile scores together with radar plots and layer-level score maps, making visual quality and physical plausibility directly comparable.</p></div>
         <div class="results-grid results-single">
           <div class="result-panel"><div class="panel-label"><span>PAPER RESULTS</span><span>T2V / I2V</span></div><img src="assets/results.png" alt="PVBench seven-domain radar plots and layer score maps for T2V and I2V models" /><div class="result-note">The figure combines seven-domain radar plots with semantic, perceptual, and physical-layer scores; no separate score-map panel is repeated below.</div></div>
         </div>
@@ -91,18 +91,18 @@
             <tr><th rowspan="2">Config.</th><th rowspan="2">Model</th><th colspan="2">Semantic layer</th><th>Perceptual layer</th><th colspan="4">Physical layer</th></tr>
             <tr><th title="Conditional &amp; Semantic Fidelity">CSF</th><th title="Behavioral, Causal &amp; Commonsense">BC</th><th title="Perceptual &amp; Temporal Quality">PTQ</th><th title="Geometric &amp; Spatial">GS</th><th title="Material &amp; Field State">MFS</th><th title="Kinematic &amp; Persistence">KP</th><th title="Mechanical &amp; Conservation">MC</th></tr>
           </thead><tbody>
-            <tr><td rowspan="6">T2V</td><td>SANA-Video 2.0</td><td>55.1</td><td>39.0</td><td>58.2</td><td>47.0</td><td>27.4</td><td>52.2</td><td>18.7</td></tr>
-            <tr><td>Wan2.1</td><td>64.8</td><td>43.7</td><td>63.4</td><td>50.6</td><td>16.4</td><td>55.3<sup>*</sup></td><td>24.8</td></tr>
-            <tr><td>Wan2.2</td><td>73.1</td><td>53.6</td><td>68.1<sup>*</sup></td><td>49.2</td><td>18.1</td><td>52.9</td><td>20.5</td></tr>
-            <tr><td>LingBot-Video</td><td>72.8</td><td>59.8</td><td>58.0</td><td>42.8</td><td>28.9</td><td>51.1</td><td>22.5</td></tr>
-            <tr><td>MiniMax H3</td><td>88.0<sup>*</sup></td><td>79.3<sup>*</sup></td><td>55.4</td><td><strong>52.6</strong></td><td>30.8<sup>*</sup></td><td>51.5</td><td>25.3<sup>*</sup></td></tr>
-            <tr class="leaderboard-highlight"><td>Seedance 2.5</td><td><strong>92.2</strong></td><td><strong>83.3</strong></td><td><strong>68.4</strong></td><td>52.2<sup>*</sup></td><td><strong>47.2</strong></td><td><strong>55.6</strong></td><td><strong>30.0</strong></td></tr>
-            <tr class="config-break"><td rowspan="6">I2V</td><td>SANA-Video 2.0</td><td>56.0</td><td>22.9</td><td>48.4</td><td>35.8</td><td>21.3</td><td>48.0</td><td>19.5</td></tr>
-            <tr><td>Wan2.1</td><td>84.6</td><td>41.1</td><td>59.2</td><td>40.9</td><td>28.0</td><td>53.9</td><td>24.0</td></tr>
-            <tr><td>Wan2.2</td><td>88.6</td><td>55.1</td><td>66.6<sup>*</sup></td><td>45.8</td><td>31.1</td><td>52.6</td><td>23.6</td></tr>
-            <tr><td>LingBot-Video</td><td>80.2</td><td>61.8</td><td>58.1</td><td><strong>50.8</strong></td><td>33.4</td><td><strong>60.7</strong></td><td>26.8<sup>*</sup></td></tr>
-            <tr><td>MiniMax H3</td><td>92.8<sup>*</sup></td><td><strong>79.9</strong></td><td>62.5</td><td>48.9</td><td>34.2<sup>*</sup></td><td>50.7</td><td>20.1</td></tr>
-            <tr class="leaderboard-highlight"><td>Seedance 2.5</td><td><strong>96.8</strong></td><td>79.7<sup>*</sup></td><td><strong>67.7</strong></td><td>50.3<sup>*</sup></td><td><strong>43.4</strong></td><td>54.4<sup>*</sup></td><td><strong>29.0</strong></td></tr>
+            <tr><td class="config-name" rowspan="6">T2V</td><td class="model-name">SANA-Video 2.0</td><td>55.1</td><td>39.0</td><td>58.2</td><td>47.0</td><td>27.4</td><td>52.2</td><td>18.7</td></tr>
+            <tr><td class="model-name">Wan2.1</td><td>64.8</td><td>43.7</td><td>63.4</td><td>50.6</td><td>16.4</td><td>55.3<sup>*</sup></td><td>24.8</td></tr>
+            <tr><td class="model-name">Wan2.2</td><td>73.1</td><td>53.6</td><td>68.1<sup>*</sup></td><td>49.2</td><td>18.1</td><td>52.9</td><td>20.5</td></tr>
+            <tr><td class="model-name">LingBot-Video</td><td>72.8</td><td>59.8</td><td>58.0</td><td>42.8</td><td>28.9</td><td>51.1</td><td>22.5</td></tr>
+            <tr><td class="model-name">MiniMax H3</td><td>88.0<sup>*</sup></td><td>79.3<sup>*</sup></td><td>55.4</td><td><strong>52.6</strong></td><td>30.8<sup>*</sup></td><td>51.5</td><td>25.3<sup>*</sup></td></tr>
+            <tr class="leaderboard-highlight"><td class="model-name">Seedance 2.5</td><td><strong>92.2</strong></td><td><strong>83.3</strong></td><td><strong>68.4</strong></td><td>52.2<sup>*</sup></td><td><strong>47.2</strong></td><td><strong>55.6</strong></td><td><strong>30.0</strong></td></tr>
+            <tr class="config-break"><td class="config-name" rowspan="6">I2V</td><td class="model-name">SANA-Video 2.0</td><td>56.0</td><td>22.9</td><td>48.4</td><td>35.8</td><td>21.3</td><td>48.0</td><td>19.5</td></tr>
+            <tr><td class="model-name">Wan2.1</td><td>84.6</td><td>41.1</td><td>59.2</td><td>40.9</td><td>28.0</td><td>53.9</td><td>24.0</td></tr>
+            <tr><td class="model-name">Wan2.2</td><td>88.6</td><td>55.1</td><td>66.6<sup>*</sup></td><td>45.8</td><td>31.1</td><td>52.6</td><td>23.6</td></tr>
+            <tr><td class="model-name">LingBot-Video</td><td>80.2</td><td>61.8</td><td>58.1</td><td><strong>50.8</strong></td><td>33.4</td><td><strong>60.7</strong></td><td>26.8<sup>*</sup></td></tr>
+            <tr><td class="model-name">MiniMax H3</td><td>92.8<sup>*</sup></td><td><strong>79.9</strong></td><td>62.5</td><td>48.9</td><td>34.2<sup>*</sup></td><td>50.7</td><td>20.1</td></tr>
+            <tr class="leaderboard-highlight"><td class="model-name">Seedance 2.5</td><td><strong>96.8</strong></td><td>79.7<sup>*</sup></td><td><strong>67.7</strong></td><td>50.3<sup>*</sup></td><td><strong>43.4</strong></td><td>54.4<sup>*</sup></td><td><strong>29.0</strong></td></tr>
           </tbody></table></div>
           <p class="leaderboard-footnote">CSF: Conditional &amp; Semantic Fidelity · BC: Behavioral, Causal &amp; Commonsense · PTQ: Perceptual &amp; Temporal Quality · GS: Geometric &amp; Spatial · MFS: Material &amp; Field State · KP: Kinematic &amp; Persistence · MC: Mechanical &amp; Conservation. <strong>Bold</strong> marks the highest score within each configuration; <sup>*</sup> marks the second-highest.</p>
         </div>
@@ -111,7 +111,7 @@
 
     <section id="comparison" class="section comparison-section">
       <div class="shell">
-        <div class="section-heading light"><div><span class="section-kicker">06 / VISUAL COMPARISON</span><h2>Compare the physical<br /><em>cases side by side.</em></h2></div><p>Browse one physical case at a time and compare five video-generation models. Switch between T2V and I2V while the key prompt, physical dimension, and evaluation method stay visible beside the videos.</p></div>
+        <div class="section-heading light"><div><span class="section-kicker">05 / VISUAL COMPARISON</span><h2>Compare the physical<br /><em>cases side by side.</em></h2></div><p>Browse one physical case at a time and compare five video-generation models. Switch between T2V and I2V while the key prompt, physical dimension, and evaluation method stay visible beside the videos.</p></div>
         <div class="comparison-app" aria-label="PVBench physical case comparison">
           <div class="comparison-toolbar"><div class="comparison-mode"><span>MODALITY</span><button type="button" class="mode-button is-active" data-modality="t2v">T2V</button><button type="button" class="mode-button" data-modality="i2v">I2V</button></div><div class="comparison-nav"><button type="button" class="compare-step" data-step="prev">← Previous</button><strong id="comparison-counter" aria-live="polite">01 / 25</strong><button type="button" class="compare-step" data-step="next">Next →</button></div></div>
           <div class="comparison-status"><span><b id="comparison-case-id">Case 01</b> · matched benchmark scene</span><span id="comparison-focus-copy">T2V · five-model view</span></div>
@@ -127,7 +127,7 @@
     </section>
 
     <section id="citation" class="section shell citation-section">
-      <div class="section-heading"><div><span class="section-kicker">07 / CITATION</span><h2>Cite PVBench</h2></div><p>Publication and persistent links will be updated after the public release.</p></div>
+      <div class="section-heading"><div><span class="section-kicker">06 / CITATION</span><h2>Cite PVBench</h2></div><p>Publication and persistent links will be updated after the public release.</p></div>
       <div class="citation-box"><button class="copy-button" data-copy="citation-text">Copy</button><code id="citation-text">@inproceedings{pvbench2026,
   title     = {PVBench: Quantifying Physical Plausibility in Video Generation with Object-Level Physical Measurements},
   author    = {Chen, Kaiwei and Li, Moran and Gan, Zhenye and Wang, Yabiao and Wang, Chengjie and Zhang, Kexin and Liu, Yong and Zhang, Jiangning},
