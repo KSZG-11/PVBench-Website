@@ -39,23 +39,56 @@
 
   const comparison = document.querySelector('.comparison-app');
   const cases = window.PVBenchPhysicsCases || [];
-  if (!comparison || !cases.length) return;
+  const models = window.PVBenchModels || [];
+  if (!comparison || !cases.length || !models.length) return;
 
   const counter = document.getElementById('comparison-counter');
   const caseId = document.getElementById('comparison-case-id');
   const promptId = document.getElementById('comparison-prompt-id');
-  const t2vSlot = document.getElementById('comparison-t2v-slot');
-  const i2vSlot = document.getElementById('comparison-i2v-slot');
   const dimension = document.getElementById('comparison-dimension');
   const name = document.getElementById('comparison-name');
   const domain = document.getElementById('comparison-domain');
   const method = document.getElementById('comparison-method');
   const prompt = document.getElementById('comparison-prompt');
   const focusCopy = document.getElementById('comparison-focus-copy');
+  const modelGrid = document.getElementById('comparison-model-grid');
   const indexGrid = document.getElementById('case-index-grid');
-  const modeButtons = comparison.querySelectorAll('[data-focus]');
+  const modeButtons = comparison.querySelectorAll('[data-modality]');
   let current = 0;
-  let focus = 'both';
+  let modality = 't2v';
+
+  const makeModelCard = (model, item) => {
+    const card = document.createElement('article');
+    card.className = `video-case-card model-${model.id}`;
+    card.dataset.model = model.id;
+
+    const head = document.createElement('div');
+    head.className = 'video-case-head';
+    const modelName = document.createElement('span');
+    modelName.textContent = model.name;
+    const sourceId = document.createElement('code');
+    sourceId.textContent = item.promptId;
+    head.append(modelName, sourceId);
+
+    const placeholder = document.createElement('div');
+    placeholder.className = 'video-placeholder';
+    const mark = document.createElement('span');
+    mark.className = 'placeholder-mark';
+    mark.textContent = model.short;
+    const title = document.createElement('strong');
+    title.textContent = `${modality.toUpperCase()} video slot`;
+    const note = document.createElement('span');
+    note.textContent = model.id === 'lingbot' && modality === 'i2v'
+      ? 'ID is listed in the supplied LingBot I2V record.'
+      : `Add the ${model.name} file for this prompt.`;
+    placeholder.append(mark, title, note);
+    card.append(head, placeholder);
+    return card;
+  };
+
+  const renderModelCards = (item) => {
+    modelGrid.replaceChildren(...models.map((model) => makeModelCard(model, item)));
+  };
 
   cases.forEach((item, index) => {
     const button = document.createElement('button');
@@ -83,17 +116,16 @@
     counter.textContent = `${item.number} / ${String(cases.length).padStart(2, '0')}`;
     caseId.textContent = `PV-${item.number}`;
     promptId.textContent = item.promptId;
-    t2vSlot.textContent = item.promptId;
-    i2vSlot.textContent = item.promptId;
     dimension.textContent = item.dimension;
     name.textContent = item.name;
     domain.textContent = item.domain;
     method.textContent = item.method;
     prompt.textContent = item.keyPrompt;
-    comparison.dataset.focus = focus;
-    focusCopy.textContent = focus === 'both' ? 'Showing both modalities' : `Focusing on ${focus.toUpperCase()}`;
-    modeButtons.forEach((button) => button.classList.toggle('is-active', button.dataset.focus === focus));
+    comparison.dataset.modality = modality;
+    focusCopy.textContent = `${modality.toUpperCase()} · five-model view`;
+    modeButtons.forEach((button) => button.classList.toggle('is-active', button.dataset.modality === modality));
     indexGrid.querySelectorAll('.case-index-button').forEach((button, index) => button.classList.toggle('is-active', index === current));
+    renderModelCards(item);
   };
 
   comparison.querySelectorAll('[data-step]').forEach((button) => {
@@ -105,7 +137,7 @@
     });
   });
   modeButtons.forEach((button) => button.addEventListener('click', () => {
-    focus = button.dataset.focus;
+    modality = button.dataset.modality;
     render();
   }));
   render();

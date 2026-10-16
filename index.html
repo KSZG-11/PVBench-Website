@@ -94,10 +94,12 @@
       <div class="section-heading"><div><span class="section-kicker">05 / LEADERBOARD</span><h2>Rank what models<br /><em>actually preserve.</em></h2></div><p>The leaderboard is wired for the final benchmark release. Scores stay blank until the selected videos have been evaluated, so this page never presents placeholder numbers as scientific results.</p></div>
       <div class="leaderboard-card">
         <div class="leaderboard-head"><div><span class="leaderboard-live"><i></i> RELEASE PREVIEW</span><h3>PVBench leaderboard</h3></div><span class="leaderboard-pending">Scores pending final evaluation</span></div>
-        <div class="leaderboard-table-wrap"><table class="leaderboard-table"><thead><tr><th>Rank</th><th>Track</th><th>Model</th><th>Physical</th><th>Semantic</th><th>Overall</th><th>Status</th></tr></thead><tbody>
-          <tr><td>—</td><td>Overall</td><td>Awaiting evaluation</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
-          <tr><td>—</td><td>T2V</td><td>Awaiting evaluation</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
-          <tr><td>—</td><td>I2V</td><td>Awaiting evaluation</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
+        <div class="leaderboard-table-wrap"><table class="leaderboard-table"><thead><tr><th>Rank</th><th>Model</th><th>T2V</th><th>I2V</th><th>Physical</th><th>Overall</th><th>Status</th></tr></thead><tbody>
+          <tr><td>—</td><td>Seedance 2.5</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
+          <tr><td>—</td><td>MiniMax H3</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
+          <tr><td>—</td><td>Wan 2.1</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
+          <tr><td>—</td><td>Wan 2.2</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
+          <tr><td>—</td><td>LingBot</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pending-pill">Pending</span></td></tr>
         </tbody></table></div>
         <p class="leaderboard-footnote">The final table will report model-level aggregate scores together with the 25 physical dimensions and seven benchmark domains.</p>
       </div>
@@ -105,16 +107,13 @@
 
     <section id="comparison" class="section comparison-section">
       <div class="shell">
-        <div class="section-heading light"><div><span class="section-kicker">06 / VISUAL COMPARISON</span><h2>Compare the physical<br /><em>cases side by side.</em></h2></div><p>Browse one matched prompt group at a time. Each case reserves a T2V slot and an I2V slot, with the key prompt, physical dimension, and evaluation method shown beside the videos.</p></div>
+        <div class="section-heading light"><div><span class="section-kicker">06 / VISUAL COMPARISON</span><h2>Compare the physical<br /><em>cases side by side.</em></h2></div><p>Browse one physical case at a time and compare five video-generation models. Switch between T2V and I2V while the key prompt, physical dimension, and evaluation method stay visible beside the videos.</p></div>
         <div class="comparison-app" aria-label="PVBench physical case comparison">
-          <div class="comparison-toolbar"><div class="comparison-mode"><span>MODALITY</span><button type="button" class="mode-button is-active" data-focus="both">T2V + I2V</button><button type="button" class="mode-button" data-focus="t2v">T2V focus</button><button type="button" class="mode-button" data-focus="i2v">I2V focus</button></div><div class="comparison-nav"><button type="button" class="compare-step" data-step="prev">← Previous</button><strong id="comparison-counter" aria-live="polite">01 / 25</strong><button type="button" class="compare-step" data-step="next">Next →</button></div></div>
-          <div class="comparison-status"><span><b id="comparison-case-id">PV-001</b> · matched prompt <code id="comparison-prompt-id">U46V2-0287</code></span><span id="comparison-focus-copy">Showing both modalities</span></div>
-          <div class="comparison-video-grid">
-            <article class="video-case-card" data-modality-card="t2v"><div class="video-case-head"><span>T2V</span><code id="comparison-t2v-slot">U46V2-0287</code></div><div class="video-placeholder"><span class="placeholder-mark">T2V</span><strong>Video slot reserved</strong><span>Drop the selected T2V file here later.</span></div></article>
-            <article class="video-case-card" data-modality-card="i2v"><div class="video-case-head"><span>I2V</span><code id="comparison-i2v-slot">U46V2-0287</code></div><div class="video-placeholder"><span class="placeholder-mark">I2V</span><strong>Video slot reserved</strong><span>Drop the selected I2V file here later.</span></div></article>
-          </div>
-          <div class="comparison-details"><div class="comparison-dimension"><span class="detail-label">PHYSICAL DIMENSION</span><strong><span id="comparison-dimension">R01</span> · <span id="comparison-name">Depth</span></strong><span id="comparison-domain">Geometry &amp; spatial consistency</span></div><div class="comparison-method"><span class="detail-label">EVALUATION METHOD</span><strong id="comparison-method">VGGT-Ω · geometry</strong><span>Object-level measurement pipeline</span></div><div class="comparison-prompt"><span class="detail-label">KEY PROMPT</span><p id="comparison-prompt">A yellow cylinder before a green sphere; observe both from a locked frontal view with their marked positions unchanged.</p></div></div>
-          <div class="case-index-head"><span>25 selected physical cases · 50 video slots</span><span>Choose a case to jump directly</span></div><div class="case-index-grid" id="case-index-grid" aria-label="25 physical case selectors"></div>
+          <div class="comparison-toolbar"><div class="comparison-mode"><span>MODALITY</span><button type="button" class="mode-button is-active" data-modality="t2v">T2V</button><button type="button" class="mode-button" data-modality="i2v">I2V</button></div><div class="comparison-nav"><button type="button" class="compare-step" data-step="prev">← Previous</button><strong id="comparison-counter" aria-live="polite">01 / 25</strong><button type="button" class="compare-step" data-step="next">Next →</button></div></div>
+          <div class="comparison-status"><span><b id="comparison-case-id">PV-001</b> · matched prompt <code id="comparison-prompt-id">U46V2-0243</code></span><span id="comparison-focus-copy">T2V · five-model view</span></div>
+          <div class="comparison-video-grid" id="comparison-model-grid" aria-live="polite"></div>
+          <div class="comparison-details"><div class="comparison-dimension"><span class="detail-label">PHYSICAL DIMENSION</span><strong><span id="comparison-dimension">R01</span> · <span id="comparison-name">Depth</span></strong><span id="comparison-domain">Geometry &amp; spatial consistency</span></div><div class="comparison-method"><span class="detail-label">EVALUATION METHOD</span><strong id="comparison-method">VGGT-Ω · geometry</strong><span>Object-level measurement pipeline</span></div><div class="comparison-prompt"><span class="detail-label">KEY PROMPT</span><p id="comparison-prompt">Selected prompt preview appears here.</p></div></div>
+          <div class="case-index-head"><span>25 physical cases · 5 models · T2V + I2V</span><span>Choose a case to jump directly</span></div><div class="case-index-grid" id="case-index-grid" aria-label="25 physical case selectors"></div>
         </div>
       </div>
     </section>
