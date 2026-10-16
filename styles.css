@@ -25,3 +25,6 @@
 .brand-mark .brand-node{fill:#55dcff;stroke:#e9fdff;stroke-width:1;filter:drop-shadow(0 0 3px #55dcff);}
 .site-footer .brand-mark{background:#07111f;border-color:#536b83;}
 
+
+.ticker-track{width:max-content;justify-content:flex-start;padding-left:24px;animation:domain-marquee 42s linear infinite;}@keyframes domain-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.ticker-track{animation:none;}}
+
