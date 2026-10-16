@@ -1,0 +1,278 @@
+/* Curated preview slots: one matched T2V/I2V prompt group for each of the 25 physical dimensions. */
+window.PVBenchPhysicsCases = [
+  {
+    "number": "001",
+    "dimension": "R01",
+    "name": "Depth",
+    "domain": "Geometry & spatial consistency",
+    "method": "VGGT-Ω · geometry",
+    "keyPrompt": "A yellow cylinder before a green sphere; observe both from a locked frontal view with their marked positions unchanged.",
+    "promptId": "U46V2-0287",
+    "t2vSlot": "PV-001-T2V",
+    "i2vSlot": "PV-001-I2V"
+  },
+  {
+    "number": "002",
+    "dimension": "R02",
+    "name": "Surface normal",
+    "domain": "Geometry & spatial consistency",
+    "method": "StableNormal · geometry",
+    "keyPrompt": "A satin cloth draped across a sphere and a box; a brief air pulse moves the free cloth edge.",
+    "promptId": "U46V2-0113",
+    "t2vSlot": "PV-002-T2V",
+    "i2vSlot": "PV-002-I2V"
+  },
+  {
+    "number": "003",
+    "dimension": "R03",
+    "name": "Shape",
+    "domain": "Geometry & spatial consistency",
+    "method": "VGGT-Ω · geometry",
+    "keyPrompt": "A sphere, cube, cone, cylinder, and triangular prism rotate once on a textured turntable.",
+    "promptId": "U46V2-0116",
+    "t2vSlot": "PV-003-T2V",
+    "i2vSlot": "PV-003-I2V"
+  },
+  {
+    "number": "004",
+    "dimension": "R04",
+    "name": "Absolute scale",
+    "domain": "Geometry & spatial consistency",
+    "method": "DA3 + SAM 3 · scale and pose",
+    "keyPrompt": "A hand slides a pencil between two markings on a 30-centimeter ruler.",
+    "promptId": "U46V2-0121",
+    "t2vSlot": "PV-004-T2V",
+    "i2vSlot": "PV-004-I2V"
+  },
+  {
+    "number": "005",
+    "dimension": "R05",
+    "name": "Current deformation state",
+    "domain": "Material & field state",
+    "method": "VGGT-Ω + SpatialTracker V2 · deformation",
+    "keyPrompt": "A press lowers a steel ball onto soft modeling clay and holds at a marked platen position.",
+    "promptId": "U46V2-0146",
+    "t2vSlot": "PV-005-T2V",
+    "i2vSlot": "PV-005-I2V"
+  },
+  {
+    "number": "006",
+    "dimension": "R06",
+    "name": "Material properties",
+    "domain": "Material & field state",
+    "method": "Qwen3-VL · material judgment",
+    "keyPrompt": "Two identical tilted cups contain clear water and thick amber syrup while their clamps rotate through the same angle.",
+    "promptId": "U46V2-0235",
+    "t2vSlot": "PV-006-T2V",
+    "i2vSlot": "PV-006-I2V"
+  },
+  {
+    "number": "007",
+    "dimension": "R07",
+    "name": "Thermal radiation",
+    "domain": "Material & field state",
+    "method": "Qwen3-VL · thermal judgment",
+    "keyPrompt": "A current control increases through three labeled settings in a glass-tube coil apparatus.",
+    "promptId": "U46V2-0315",
+    "t2vSlot": "PV-007-T2V",
+    "i2vSlot": "PV-007-I2V"
+  },
+  {
+    "number": "008",
+    "dimension": "R08",
+    "name": "Multi-view geometry consistency",
+    "domain": "Geometry & spatial consistency",
+    "method": "VGGT-Ω · multi-view geometry",
+    "keyPrompt": "A cube, sphere, and cone at unequal depths are shown from left, frontal, and right views.",
+    "promptId": "U46V2-0127",
+    "t2vSlot": "PV-008-T2V",
+    "i2vSlot": "PV-008-I2V"
+  },
+  {
+    "number": "009",
+    "dimension": "R09",
+    "name": "Relative scale",
+    "domain": "Geometry & spatial consistency",
+    "method": "VGGT-Ω + SAM 3 · scale and pose",
+    "keyPrompt": "A red ball travels toward the camera along the center line of a tiled corridor.",
+    "promptId": "U46V2-0131",
+    "t2vSlot": "PV-009-T2V",
+    "i2vSlot": "PV-009-I2V"
+  },
+  {
+    "number": "010",
+    "dimension": "R10",
+    "name": "3D pose",
+    "domain": "Geometry & spatial consistency",
+    "method": "Any6D / VGGT-Ω · pose",
+    "keyPrompt": "An asymmetric colored-face cube turns about its vertical axle to a marked orientation.",
+    "promptId": "U46V2-0136",
+    "t2vSlot": "PV-010-T2V",
+    "i2vSlot": "PV-010-I2V"
+  },
+  {
+    "number": "011",
+    "dimension": "R11",
+    "name": "Spatial relation",
+    "domain": "Geometry & spatial consistency",
+    "method": "VGGT-Ω + SAM 3 · spatial relation",
+    "keyPrompt": "A hand stacks a red cube on a blue cube, then places a yellow cube above them.",
+    "promptId": "U46V2-0141",
+    "t2vSlot": "PV-011-T2V",
+    "i2vSlot": "PV-011-I2V"
+  },
+  {
+    "number": "012",
+    "dimension": "R12",
+    "name": "Stability",
+    "domain": "Geometry & spatial consistency",
+    "method": "VGGT-Ω + SAM 3 · static stability",
+    "keyPrompt": "A tall stack of offset books is observed while the room remains undisturbed.",
+    "promptId": "U46V2-0212",
+    "t2vSlot": "PV-012-T2V",
+    "i2vSlot": "PV-012-I2V"
+  },
+  {
+    "number": "013",
+    "dimension": "R13",
+    "name": "Light–space consistency",
+    "domain": "Material & field state",
+    "method": "ReasonX + StableNormal · lighting geometry",
+    "keyPrompt": "A desk lamp illuminates a white sphere, cube, and cylinder from a fixed position.",
+    "promptId": "U46V2-0161",
+    "t2vSlot": "PV-013-T2V",
+    "i2vSlot": "PV-013-I2V"
+  },
+  {
+    "number": "014",
+    "dimension": "R14",
+    "name": "Magnetic / electric relation",
+    "domain": "Material & field state",
+    "method": "Qwen3-VL · field interaction",
+    "keyPrompt": "Two bar magnets on low-friction carts are released at the same instant.",
+    "promptId": "U46V2-0167",
+    "t2vSlot": "PV-014-T2V",
+    "i2vSlot": "PV-014-I2V"
+  },
+  {
+    "number": "015",
+    "dimension": "R15",
+    "name": "Displacement",
+    "domain": "Kinematic & persistence",
+    "method": "SpatialTracker V2 · displacement",
+    "keyPrompt": "A cue ball is struck toward the opposite cushion of a green billiard table.",
+    "promptId": "U46V2-0181",
+    "t2vSlot": "PV-015-T2V",
+    "i2vSlot": "PV-015-I2V"
+  },
+  {
+    "number": "016",
+    "dimension": "R16",
+    "name": "Speed & acceleration",
+    "domain": "Kinematic & persistence",
+    "method": "SpatialTracker V2 · kinematics",
+    "keyPrompt": "A car starts at a marked line and travels beyond four evenly spaced posts.",
+    "promptId": "U46V2-0187",
+    "t2vSlot": "PV-016-T2V",
+    "i2vSlot": "PV-016-I2V"
+  },
+  {
+    "number": "017",
+    "dimension": "R17",
+    "name": "Angular velocity",
+    "domain": "Kinematic & persistence",
+    "method": "Any6D / VGGT-Ω · Kabsch",
+    "keyPrompt": "A marked three-blade ceiling fan is switched on for the rest of the shot.",
+    "promptId": "U46V2-0191",
+    "t2vSlot": "PV-017-T2V",
+    "i2vSlot": "PV-017-I2V"
+  },
+  {
+    "number": "018",
+    "dimension": "R18",
+    "name": "Light–time consistency",
+    "domain": "Material & field state",
+    "method": "ReasonX · temporal lighting",
+    "keyPrompt": "A still life is observed while a studio light stays at its marked point.",
+    "promptId": "U46V2-0171",
+    "t2vSlot": "PV-018-T2V",
+    "i2vSlot": "PV-018-I2V"
+  },
+  {
+    "number": "019",
+    "dimension": "R19",
+    "name": "Cross-frame geometric consistency",
+    "domain": "Kinematic & persistence",
+    "method": "VGGT-Ω + FlowSeek · cross-frame geometry",
+    "keyPrompt": "A camera advances along the center line of a corridor with repeated columns and floor marks.",
+    "promptId": "U46V2-0196",
+    "t2vSlot": "PV-019-T2V",
+    "i2vSlot": "PV-019-I2V"
+  },
+  {
+    "number": "020",
+    "dimension": "R20",
+    "name": "Motion continuity",
+    "domain": "Kinematic & persistence",
+    "method": "VFIMamba + SpatialTracker V2 · motion",
+    "keyPrompt": "A figure skater follows the complete figure-eight route marked on ice.",
+    "promptId": "U46V2-0292",
+    "t2vSlot": "PV-020-T2V",
+    "i2vSlot": "PV-020-I2V"
+  },
+  {
+    "number": "021",
+    "dimension": "R21",
+    "name": "Object persistence",
+    "domain": "Kinematic & persistence",
+    "method": "SAM 3 + VGGT-Ω + Qwen3-VL · persistence",
+    "keyPrompt": "A blue cart follows its route behind a wide solid wall that blocks the center of the path.",
+    "promptId": "U46V2-0209",
+    "t2vSlot": "PV-021-T2V",
+    "i2vSlot": "PV-021-I2V"
+  },
+  {
+    "number": "022",
+    "dimension": "R22",
+    "name": "Force and dynamic effect",
+    "domain": "Mechanical & conservation",
+    "method": "SpatialTracker V2 · force response",
+    "keyPrompt": "A hand compresses a spring launcher and releases its foam-ball trigger.",
+    "promptId": "U46V2-0217",
+    "t2vSlot": "PV-022-T2V",
+    "i2vSlot": "PV-022-I2V"
+  },
+  {
+    "number": "023",
+    "dimension": "R23",
+    "name": "Momentum conservation",
+    "domain": "Mechanical & conservation",
+    "method": "SpatialTracker V2 · momentum",
+    "keyPrompt": "A five-ball Newton cradle releases the left ball toward the stationary row.",
+    "promptId": "U46V2-0221",
+    "t2vSlot": "PV-023-T2V",
+    "i2vSlot": "PV-023-I2V"
+  },
+  {
+    "number": "024",
+    "dimension": "R24",
+    "name": "Energy conservation",
+    "domain": "Mechanical & conservation",
+    "method": "SpatialTracker V2 · energy",
+    "keyPrompt": "A tennis ball is released beside a measuring stick and observed through repeated floor contacts.",
+    "promptId": "U46V2-0227",
+    "t2vSlot": "PV-024-T2V",
+    "i2vSlot": "PV-024-I2V"
+  },
+  {
+    "number": "025",
+    "dimension": "R25",
+    "name": "Phase change",
+    "domain": "Mechanical & conservation",
+    "method": "Qwen3-VL · phase-change judgment",
+    "keyPrompt": "A clear ice cube is observed after a warming pad is switched on.",
+    "promptId": "U46V2-0176",
+    "t2vSlot": "PV-025-T2V",
+    "i2vSlot": "PV-025-I2V"
+  }
+];
