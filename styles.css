@@ -15,3 +15,13 @@
 @media(max-width:560px){.hero-paper-info{width:calc(100% - 32px)}.hero-paper-info h1{font-size:clamp(42px,11vw,64px)}.hero-paper-info .hero-paper-lede{font-size:15px}}
 
 
+
+/* PVBench mark: an object node, measurement orbit, and physical coordinate axis. */
+.brand-mark{width:31px;height:31px;padding:4px;border:1px solid #99adc2;border-radius:10px;transform:none;background:#ffffff0d;}
+.brand-mark svg{display:block;width:100%;height:100%;overflow:visible;}
+.brand-mark .brand-axis{stroke:#76e6bd;stroke-width:1.5;stroke-linecap:round;opacity:.95;}
+.brand-mark .brand-orbit{stroke:#58dfff;stroke-width:1.4;opacity:.9;}
+.brand-mark .brand-core{fill:#9f7cff;stroke:#f3efff;stroke-width:1;}
+.brand-mark .brand-node{fill:#55dcff;stroke:#e9fdff;stroke-width:1;filter:drop-shadow(0 0 3px #55dcff);}
+.site-footer .brand-mark{background:#07111f;border-color:#536b83;}
+
