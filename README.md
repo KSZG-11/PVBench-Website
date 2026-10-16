@@ -6,6 +6,10 @@ Static project page for **PVBench: Quantifying Physical Plausibility in Video Ge
 
 Open `index.html` directly, or serve this folder with any static HTTP server. The site has no build step and is suitable for GitHub Pages.
 
+## Teaser video
+
+The landing page uses a full-screen, pinned video stage inspired by contemporary computer-vision project pages. Add the approved first-party teaser as `assets/pvbench-teaser.mp4`; until then, `assets/teaser-poster.svg` provides a visual fallback. The poster is original project artwork and does not include third-party media.
+
 ## Before public release
 
 - Replace the teaser placeholder with the approved project video.

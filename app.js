@@ -22,4 +22,18 @@
       destination.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   });
+
+  const videoHero = document.querySelector('.video-hero');
+  const heroStage = document.querySelector('.hero-stage');
+  if (videoHero && heroStage) {
+    const reveal = () => {
+      const range = Math.max(1, videoHero.offsetHeight - window.innerHeight);
+      const progress = Math.max(0, Math.min(1, window.scrollY / range));
+      heroStage.classList.toggle('revealed', progress > 0.08);
+      heroStage.style.setProperty('--hero-progress', progress.toFixed(3));
+    };
+    reveal();
+    window.addEventListener('scroll', reveal, { passive: true });
+    window.addEventListener('resize', reveal);
+  }
 })();

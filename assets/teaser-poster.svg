@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">PVBench teaser poster</title>
+  <desc id="desc">A dark blue physical measurement scene with an object trajectory and coordinate axes.</desc>
+  <defs>
+    <radialGradient id="bg" cx="72%" cy="20%" r="85%"><stop offset="0" stop-color="#164e70"/><stop offset=".45" stop-color="#0d263b"/><stop offset="1" stop-color="#050b16"/></radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#63e2ff" stop-opacity=".9"/><stop offset="1" stop-color="#8a7dff" stop-opacity=".05"/></linearGradient>
+    <radialGradient id="ball" cx="30%" cy="25%"><stop stop-color="#e7ffff"/><stop offset=".25" stop-color="#51d8ff"/><stop offset=".7" stop-color="#2b76e1"/><stop offset="1" stop-color="#142a73"/></radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="16" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <g opacity=".22" stroke="#8ddfff" stroke-width="2"><path d="M0 810H1920M0 870H1920M0 930H1920M0 990H1920"/><path d="M210 720L0 1080M510 720L290 1080M810 720L670 1080M1110 720L1050 1080M1410 720L1430 1080M1710 720L1810 1080"/></g>
+  <path d="M270 650 C 540 160, 880 160, 1120 455 S 1450 720, 1730 330" fill="none" stroke="url(#beam)" stroke-width="4" stroke-dasharray="16 20" filter="url(#glow)"/>
+  <path d="M450 660 C 680 350, 920 300, 1120 480" fill="none" stroke="#69dfff" stroke-opacity=".4" stroke-width="2"/>
+  <g filter="url(#glow)"><circle cx="1120" cy="455" r="48" fill="url(#ball)"/><circle cx="1102" cy="437" r="13" fill="#fff" opacity=".7"/></g>
+  <g fill="none" stroke="#6fe4ff" stroke-width="2" opacity=".85"><path d="M1065 700H1380M1065 700V420" stroke-dasharray="9 10"/><path d="M1065 700l-70 45M1065 700l70 45M1065 700l-5-85"/></g>
+  <g fill="#9cecff" font-family="monospace" font-size="24"><text x="1395" y="706">X 0.82 m</text><text x="1080" y="402">Y 6D POSE</text><text x="975" y="780">OBJECT-LEVEL PHYSICAL TRACE</text></g>
+  <g fill="#dff9ff" font-family="Arial, sans-serif"><text x="108" y="145" font-size="28" letter-spacing="7" opacity=".8">PVBENCH / VIDEO TEASER</text><text x="108" y="930" font-size="78" font-weight="700" letter-spacing="-2">Measure what generated videos preserve.</text></g>
+  <rect x="70" y="70" width="1780" height="940" rx="32" fill="none" stroke="#9feaff" stroke-opacity=".17"/>
+</svg>

@@ -26,40 +26,28 @@
   </header>
 
   <main id="top">
-    <section class="hero shell">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="pulse-dot"></span> A physical video benchmark</div>
-        <h1>Can generated videos<br /><em>obey the laws of physics?</em></h1>
-        <p class="lede">PVBench turns physical plausibility from a visual impression into computable, object-level measurements for generated videos.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#overview">Explore PVBench <span>↓</span></a>
-          <a class="button button-ghost" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer"><span class="github-dot">◉</span> Code</a>
-          <a class="button button-ghost is-pending" href="#release">Paper <span>↗</span></a>
-        </div>
-        <div class="author-line">
-          <strong>Kaiwei Chen</strong>, Moran Li, Zhenye Gan, Yabiao Wang, Chengjie Wang,<br class="desktop-only" /> Kexin Zhang, Yong Liu, Jiangning Zhang
-          <span class="affiliations">Zhejiang University · ByteDance Inc. · Tencent</span>
-        </div>
-      </div>
-      <div class="hero-visual" aria-label="PVBench physical measurement preview">
-        <div class="visual-glow"></div>
-        <div class="measurement-card card-main">
-          <div class="card-top"><span class="status-chip"><i></i> PHYSICAL TRACE</span><span class="frame-count">FRAME 024 / 048</span></div>
-          <div class="scene-stage">
-            <div class="scene-grid"></div>
-            <div class="trajectory trajectory-one"></div>
-            <div class="trajectory trajectory-two"></div>
-            <div class="object object-ball"><span></span></div>
-            <div class="object object-block"></div>
-            <div class="measure-line measure-x"><b>0.82 m</b></div>
-            <div class="measure-line measure-y"><b>6D POSE</b></div>
-            <div class="axis"><span>X</span><span>Y</span><span>Z</span></div>
+    <section id="video" class="video-hero" aria-labelledby="hero-title">
+      <div class="hero-stage">
+        <video class="hero-background" autoplay muted loop playsinline preload="metadata" poster="assets/teaser-poster.svg" aria-label="PVBench teaser video">
+          <source src="assets/pvbench-teaser.mp4" type="video/mp4" />
+          <p class="video-fallback">The approved PVBench teaser video will appear here.</p>
+        </video>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-stage-label"><span class="pulse-dot"></span> PVBENCH / PHYSICAL VIDEO BENCHMARK</div>
+        <div class="hero-paper-info shell">
+          <div class="hero-paper-kicker">Quantifying physical plausibility in video generation</div>
+          <h1 id="hero-title">Can generated videos<br /><em>obey the laws of physics?</em></h1>
+          <p class="hero-paper-lede">Object-level measurements for geometry, motion, materials, and mechanics.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#overview">Explore the paper <span>↓</span></a>
+            <a class="button button-glass" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">Code <span>↗</span></a>
+            <a class="button button-glass is-pending" href="#release">Paper <span>↗</span></a>
           </div>
-          <div class="card-bottom"><span>Object-level measurement</span><strong>PLAUSIBILITY <b>0.86</b></strong></div>
+          <p class="hero-authors"><strong>Kaiwei Chen</strong>, Moran Li, Zhenye Gan, Yabiao Wang, Chengjie Wang, Kexin Zhang, Yong Liu, Jiangning Zhang<br /><span>Zhejiang University · ByteDance Inc. · Tencent</span></p>
         </div>
-        <div class="floating-stat stat-one"><span>46</span><small>dimensions</small></div>
-        <div class="floating-stat stat-two"><span>7</span><small>domains</small></div>
-        <div class="scan-ring ring-one"></div><div class="scan-ring ring-two"></div>
+        <div class="hero-scroll-note"><span>Scroll to reveal the paper</span><i>↓</i></div>
+        <div class="hero-video-note">Teaser placeholder · add <code>assets/pvbench-teaser.mp4</code> before public launch</div>
       </div>
     </section>
 
@@ -105,7 +93,7 @@
     </section>
 
     <section class="section shell release-section" id="release">
-      <div class="release-card"><div><span class="section-kicker">OPEN RESEARCH</span><h2>Make video generation<br /><em>physically usable.</em></h2><p>PVBench is designed to help researchers move from “looks good” to “obeys the world.” Code, prompts, and release materials will be linked here as they become available.</p></div><div class="release-actions"><a class="button button-primary" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a><a class="button button-ghost is-pending" href="#citation">Paper &amp; BibTeX <span>↓</span></a></div></div>
+      <div class="release-card"><div><span class="section-kicker">OPEN RESEARCH</span><h2>Make video generation<br /><em>physically usable.</em></h2><p>PVBench is designed to help researchers move from “looks good” to “obeys the world.” Code and release materials will be linked here as they become available.</p></div><div class="release-actions"><a class="button button-primary" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a><a class="button button-ghost is-pending" href="#citation">Paper &amp; BibTeX <span>↓</span></a></div></div>
     </section>
 
     <section id="citation" class="section shell citation-section">
