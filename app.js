@@ -44,7 +44,6 @@
 
   const counter = document.getElementById('comparison-counter');
   const caseId = document.getElementById('comparison-case-id');
-  const promptId = document.getElementById('comparison-prompt-id');
   const dimension = document.getElementById('comparison-dimension');
   const name = document.getElementById('comparison-name');
   const domain = document.getElementById('comparison-domain');
@@ -66,20 +65,22 @@
     head.className = 'video-case-head';
     const modelName = document.createElement('span');
     modelName.textContent = model.name;
-    const sourceId = document.createElement('code');
-    sourceId.textContent = item.promptId;
-    head.append(modelName, sourceId);
+    head.append(modelName);
 
     const frame = document.createElement('div');
     frame.className = 'video-frame';
     const video = document.createElement('video');
     video.className = 'comparison-video';
     video.controls = true;
-    video.preload = 'metadata';
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.preload = 'auto';
     video.playsInline = true;
     video.src = `assets/videos/${model.assetDir}/${modality.toUpperCase()}/${item.promptId}.mp4`;
-    video.setAttribute('aria-label', `${model.name} ${modality.toUpperCase()} video for ${item.promptId}`);
+    video.setAttribute('aria-label', `${model.name} ${modality.toUpperCase()} comparison video`);
     frame.appendChild(video);
+    requestAnimationFrame(() => video.play().catch(() => {}));
 
     const meta = document.createElement('div');
     meta.className = 'video-meta';
@@ -87,8 +88,8 @@
     title.textContent = `${modality.toUpperCase()} · ${model.name}`;
     const note = document.createElement('span');
     note.textContent = model.id === 'lingbot' && modality === 'i2v'
-      ? 'Selected from the supplied LingBot I2V record.'
-      : item.promptId;
+      ? 'Selected from the supplied LingBot Video I2V record.'
+      : 'Selected benchmark video';
     meta.append(title, note);
     card.append(head, frame, meta);
     return card;
@@ -108,10 +109,7 @@
     number.textContent = item.number;
     const label = document.createElement('small');
     label.textContent = item.dimension;
-    const sourceId = document.createElement('small');
-    sourceId.className = 'case-index-source';
-    sourceId.textContent = item.promptId;
-    button.append(number, label, sourceId);
+    button.append(number, label);
     button.addEventListener('click', () => {
       current = index;
       render();
@@ -122,8 +120,7 @@
   const render = () => {
     const item = cases[current];
     counter.textContent = `${item.number} / ${String(cases.length).padStart(2, '0')}`;
-    caseId.textContent = `PV-${item.number}`;
-    promptId.textContent = item.promptId;
+    caseId.textContent = `Case ${item.number}`;
     dimension.textContent = item.dimension;
     name.textContent = item.name;
     domain.textContent = item.domain;

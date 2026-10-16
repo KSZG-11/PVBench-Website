@@ -30,7 +30,7 @@ window.PVBenchModels = [
   },
   {
     "id": "lingbot",
-    "name": "LingBot",
+    "name": "LingBot Video",
     "short": "LingBot",
     "fileKey": "lingbot",
     "assetDir": "LingBot",
