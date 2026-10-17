@@ -18,6 +18,7 @@
     <nav>
       <a href="#overview">Overview</a>
       <a href="#taxonomy">Taxonomy</a>
+      <a href="#data-curation">Data Curation</a>
       <a href="#results">Evaluation &amp; Leaderboard</a>
       <a href="#comparison">Compare</a>
       <a href="#citation">Citation</a>
@@ -41,46 +42,47 @@
             <a class="button button-glass" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">Code <span>↗</span></a>
             <a class="button button-glass is-pending" href="#release">Paper <span>↗</span></a>
           </div>
-          <p class="hero-authors"><strong>Kaiwei Chen</strong><sup>1</sup>, Moran Li<sup>2</sup>, Zhenye Gan<sup>3</sup>, Yabiao Wang<sup>3</sup>, Chengjie Wang<sup>3</sup>, Kexin Zhang<sup>1</sup>, Yong Liu<sup>1</sup>, Jiangning Zhang<sup>1</sup><br /><span><sup>1</sup> Zhejiang University · <sup>2</sup> ByteDance Inc. · <sup>3</sup> Tencent</span></p>
+          <p class="hero-authors"><strong>Kaiwei Chen</strong><sup>1</sup>, Moran Li<sup>2</sup>, Zhenye Gan<sup>3</sup>, Yabiao Wang<sup>3</sup>, Chengjie Wang<sup>3</sup>, Kexin Zhang<sup>1</sup>, Yong Liu<sup>1</sup>, Jiangning Zhang<sup>1</sup><br /><span><sup>1</sup> Zhejiang University · <sup>2</sup> ByteDance · <sup>3</sup> Tencent</span></p>
         </div>
         <div class="hero-scroll-note"><span>Scroll to reveal the paper</span><i>↓</i></div>
       </div>
     </section>
 
-    <section class="ticker" aria-label="PVBench seven evaluation domains"><div class="ticker-track"><span>CONDITIONAL &amp; SEMANTIC FIDELITY</span><b>✦</b><span>BEHAVIORAL, CAUSAL &amp; COMMONSENSE CONSISTENCY</span><b>✦</b><span>PERCEPTUAL &amp; TEMPORAL QUALITY</span><b>✦</b><span>GEOMETRIC &amp; SPATIAL CONSISTENCY</span><b>✦</b><span>MATERIAL &amp; FIELD STATE</span><b>✦</b><span>KINEMATIC &amp; PERSISTENCE</span><b>✦</b><span>MECHANICAL &amp; CONSERVATION</span><b>✦</b><span>CONDITIONAL &amp; SEMANTIC FIDELITY</span><b>✦</b><span>BEHAVIORAL, CAUSAL &amp; COMMONSENSE CONSISTENCY</span><b>✦</b><span>PERCEPTUAL &amp; TEMPORAL QUALITY</span><b>✦</b><span>GEOMETRIC &amp; SPATIAL CONSISTENCY</span><b>✦</b><span>MATERIAL &amp; FIELD STATE</span><b>✦</b><span>KINEMATIC &amp; PERSISTENCE</span><b>✦</b><span>MECHANICAL &amp; CONSERVATION</span><b>✦</b></div></section>
+    <section class="ticker" aria-label="PVBench seven evaluation domains"><div class="ticker-track"><span>CONDITIONAL &amp; SEMANTIC FIDELITY</span><b>✦</b><span>BEHAVIORAL, CAUSAL &amp; COMMONSENSE CONSISTENCY</span><b>✦</b><span>PERCEPTUAL &amp; TEMPORAL QUALITY</span><b>✦</b><span>GEOMETRIC &amp; SPATIAL CONSISTENCY</span><b>✦</b><span>MATERIAL PROPERTIES &amp; FIELD STATES</span><b>✦</b><span>KINEMATIC &amp; SPATIOTEMPORAL PERSISTENCE</span><b>✦</b><span>MECHANICAL PLAUSIBILITY &amp; CONSERVATION LAWS</span><b>✦</b><span>CONDITIONAL &amp; SEMANTIC FIDELITY</span><b>✦</b><span>BEHAVIORAL, CAUSAL &amp; COMMONSENSE CONSISTENCY</span><b>✦</b><span>PERCEPTUAL &amp; TEMPORAL QUALITY</span><b>✦</b><span>GEOMETRIC &amp; SPATIAL CONSISTENCY</span><b>✦</b><span>MATERIAL PROPERTIES &amp; FIELD STATES</span><b>✦</b><span>KINEMATIC &amp; SPATIOTEMPORAL PERSISTENCE</span><b>✦</b><span>MECHANICAL PLAUSIBILITY &amp; CONSERVATION LAWS</span><b>✦</b></div></section>
 
     <section id="overview" class="section shell">
-      <div class="section-heading"><div><span class="section-kicker">01 / WHY PVBENCH</span><h2>Looking real is not<br /><em>the same as being physical.</em></h2></div><p>Modern video generators can produce visually compelling results while still violating geometry, kinematics, dynamics, and conservation laws. PVBench provides a unified way to measure those failures.</p></div>
+      <div class="section-heading"><div><span class="section-kicker">01 / WHY PVBENCH</span><h2>Looking real is not<br /><em>the same as being physical.</em></h2></div><p>Modern video generators can produce visually compelling results while still violating geometry, kinematics, dynamics, and conservation laws. PVBench turns these failures into measurable object-level quantities.</p></div>
       <div class="stat-grid">
-        <article class="stat-card"><div class="stat-number">600</div><div class="stat-label">prompt groups</div><p>Carefully designed scenes with matched T2V and I2V variants.</p></article>
+        <article class="stat-card"><div class="stat-number">600</div><div class="stat-label">paired prompt groups</div><p>600 carefully designed scenes, each with matched T2V and I2V variants.</p></article>
         <article class="stat-card stat-card-accent"><div class="stat-number">46</div><div class="stat-label">evaluation dimensions</div><p>Three assessment layers organized across seven domains.</p></article>
-        <article class="stat-card"><div class="stat-number">25</div><div class="stat-label">physical dimensions</div><p>Object-intrinsic, object-space, and object-spatiotemporal properties.</p></article>
-        <article class="stat-card"><div class="stat-number">30<span>%</span></div><div class="stat-label">embodied-agent scenes</div><p>Challenging scenarios with robots, humanoids, quadrupeds, and multi-agent systems.</p></article>
+        <article class="stat-card"><div class="stat-number">25</div><div class="stat-label">physical dimensions</div><p>Object-intrinsic properties, object–space relations, and dynamics across space and time.</p></article>
+        <article class="stat-card"><div class="stat-number">30<span>%</span></div><div class="stat-label">embodied-agent prompts</div><p>180 of 600 prompts (30%) feature robot arms, humanoids, quadrupeds, or multi-agent systems.</p></article>
       </div>
     </section>
 
     <section id="taxonomy" class="section section-dark">
       <div class="shell">
-        <div class="section-heading light"><div><span class="section-kicker">02 / THE BENCHMARK</span><h2>From pixels to<br /><em>physical quantities.</em></h2></div><p>PVBench combines specialized vision models, physical-law checks, and MLLM-assisted judgments to evaluate what generated videos actually preserve.</p></div>
+        <div class="section-heading light"><div><span class="section-kicker">02 / THE BENCHMARK</span><h2>From pixels to<br /><em>physical quantities.</em></h2></div><p>PVBench evaluates 46 dimensions across seven domains and three layers. Physical quantities are measured numerically when possible, checked against physical laws, and supplemented by Qwen3.8-27B when direct measurement is difficult.</p></div>
         <div class="taxonomy-layout">
           <div class="taxonomy-visual"><img src="assets/overview.png" alt="PVBench metric taxonomy overview" /></div>
           <div class="taxonomy-copy">
-            <div class="layer-row semantic"><span class="layer-index">01</span><div><h3>Semantic layer</h3><p>Condition and semantic fidelity; behavioral, causal, and commonsense consistency.</p></div><b>14 dims</b></div>
-            <div class="layer-row perceptual"><span class="layer-index">02</span><div><h3>Perceptual layer</h3><p>Subject consistency, aesthetic quality, temporal stability, and motion smoothness.</p></div><b>7 dims</b></div>
-            <div class="layer-row physical active"><span class="layer-index">03</span><div><h3>Physical layer</h3><p>Geometry, materials, kinematics, mechanics, and conservation laws.</p></div><b>25 dims</b></div>
+            <div class="layer-row semantic"><span class="layer-index">01</span><div><h3>Semantic layer</h3><p>Condition and semantic fidelity (CSF), plus behavioral, causal, and commonsense consistency (BC).</p></div><b>14 dims</b></div>
+            <div class="layer-row perceptual"><span class="layer-index">02</span><div><h3>Perceptual layer</h3><p>Perceptual and temporal quality (PTQ): subject consistency, aesthetics, motion smoothness, flicker, dynamics, background, and imaging quality.</p></div><b>7 dims</b></div>
+            <div class="layer-row physical active"><span class="layer-index">03</span><div><h3>Physical layer</h3><p>Four domains: geometry and spatial consistency, material and field state, kinematics and persistence, and mechanics and conservation.</p></div><b>25 dims</b></div>
           </div>
+          <div class="taxonomy-methods"><span class="method-label">EVALUATION PARADIGMS</span><p><strong>17</strong> specialized-model quantitative evaluations · <strong>4</strong> hybrid measurement + MLLM judgments · <strong>4</strong> pure MLLM semantic scores</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section shell pipeline-section">
-      <div class="section-heading"><div><span class="section-kicker">03 / DATA CURATION</span><h2>Designed for<br /><em>measurable physics.</em></h2></div><p>Each prompt is constructed around a target dimension, an observable scene, and a verifiable evaluation signal.</p></div>
-      <div class="pipeline-card"><img src="assets/pipeline.png" alt="PVBench data curation and prompt generation pipeline" /><div class="image-caption"><span>DATA PIPELINE</span><span>Target dimension → scene design → generation → evaluation</span></div></div>
+    <section id="data-curation" class="section shell pipeline-section">
+      <div class="section-heading"><div><span class="section-kicker">03 / DATA CURATION</span><h2>Designed for<br /><em>measurable physics.</em></h2></div><p>Each of the 600 prompt groups binds target dimensions to a physically observable scene; T2V and I2V variants share the same initial scene.</p></div>
+      <div class="pipeline-card"><img src="assets/pipeline.png" alt="PVBench data curation and prompt generation pipeline" /><div class="image-caption"><span>DATA PIPELINE</span><span>Target dimension → scene specification → human verification → paired T2V / I2V generation</span></div></div>
     </section>
 
     <section id="results" class="section results-section">
       <div class="shell">
-        <div class="section-heading light"><div><span class="section-kicker">04 / EVALUATION &amp; LEADERBOARD</span><h2>See what models<br /><em>actually preserve.</em></h2></div><p>PVBench reports the paper's seven-domain percentile scores together with radar plots and layer-level score maps, making visual quality and physical plausibility directly comparable.</p></div>
+        <div class="section-heading light"><div><span class="section-kicker">04 / EVALUATION &amp; LEADERBOARD</span><h2>See what models<br /><em>actually preserve.</em></h2></div><p>PVBench reports percentile scores for six models in both T2V and I2V. Radar plots and layer-level score maps make the gap between visual quality and physical plausibility directly comparable.</p></div>
         <div class="results-grid results-single">
           <div class="result-panel"><div class="panel-label"><span>PAPER RESULTS</span><span>T2V / I2V</span></div><img src="assets/results.png?v=20261016-results-3" alt="PVBench seven-domain radar plots and layer score maps for T2V and I2V models" /><div class="result-note">The figure combines seven-domain radar plots with semantic, perceptual, and physical-layer scores; no separate score-map panel is repeated below.</div></div>
         </div>
@@ -89,7 +91,7 @@
           <div class="leaderboard-head"><div><span class="leaderboard-live"><i></i> PAPER SCORES · PERCENTILE SCALE</span><h3>PVBench leaderboard</h3></div><span class="leaderboard-pending">6 models · T2V + I2V</span></div>
           <div class="leaderboard-table-wrap"><table class="leaderboard-table"><thead>
             <tr><th rowspan="2">Config.</th><th rowspan="2">Model</th><th colspan="2">Semantic layer</th><th>Perceptual layer</th><th colspan="4">Physical layer</th></tr>
-            <tr><th title="Conditional &amp; Semantic Fidelity">CSF</th><th title="Behavioral, Causal &amp; Commonsense">BC</th><th title="Perceptual &amp; Temporal Quality">PTQ</th><th title="Geometric &amp; Spatial">GS</th><th title="Material &amp; Field State">MFS</th><th title="Kinematic &amp; Persistence">KP</th><th title="Mechanical &amp; Conservation">MC</th></tr>
+            <tr><th title="Conditional &amp; Semantic Fidelity">CSF</th><th title="Behavioral, Causal &amp; Commonsense">BC</th><th title="Perceptual &amp; Temporal Quality">PTQ</th><th title="Geometric &amp; Spatial">GS</th><th title="Material Properties &amp; Field States">MFS</th><th title="Kinematic &amp; Spatiotemporal Persistence">KP</th><th title="Mechanical Plausibility &amp; Conservation Laws">MC</th></tr>
           </thead><tbody>
             <tr><td class="config-name" rowspan="6">T2V</td><td class="model-name">SANA-Video 2.0</td><td>55.1</td><td>39.0</td><td>58.2</td><td>47.0</td><td>27.4</td><td>52.2</td><td>18.7</td></tr>
             <tr><td class="model-name">Wan2.1</td><td>64.8</td><td>43.7</td><td>63.4</td><td>50.6</td><td>16.4</td><td>55.3<sup>*</sup></td><td>24.8</td></tr>
@@ -104,7 +106,7 @@
             <tr><td class="model-name">MiniMax H3</td><td>92.8<sup>*</sup></td><td><strong>79.9</strong></td><td>62.5</td><td>48.9</td><td>34.2<sup>*</sup></td><td>50.7</td><td>20.1</td></tr>
             <tr class="leaderboard-highlight"><td class="model-name">Seedance 2.5</td><td><strong>96.8</strong></td><td>79.7<sup>*</sup></td><td><strong>67.7</strong></td><td>50.3<sup>*</sup></td><td><strong>43.4</strong></td><td>54.4<sup>*</sup></td><td><strong>29.0</strong></td></tr>
           </tbody></table></div>
-          <p class="leaderboard-footnote">CSF: Conditional &amp; Semantic Fidelity · BC: Behavioral, Causal &amp; Commonsense · PTQ: Perceptual &amp; Temporal Quality · GS: Geometric &amp; Spatial · MFS: Material &amp; Field State · KP: Kinematic &amp; Persistence · MC: Mechanical &amp; Conservation. <strong>Bold</strong> marks the highest score within each configuration; <sup>*</sup> marks the second-highest.</p>
+          <p class="leaderboard-footnote">CSF: Conditional &amp; Semantic Fidelity · BC: Behavioral, Causal &amp; Commonsense · PTQ: Perceptual &amp; Temporal Quality · GS: Geometric &amp; Spatial · MFS: Material Properties &amp; Field States · KP: Kinematic &amp; Spatiotemporal Persistence · MC: Mechanical Plausibility &amp; Conservation Laws. <strong>Bold</strong> marks the highest score within each configuration; <sup>*</sup> marks the second-highest.</p>
         </div>
       </div>
     </section>
@@ -123,7 +125,7 @@
     </section>
 
     <section class="section shell release-section" id="release">
-      <div class="release-card"><div><span class="section-kicker">OPEN RESEARCH</span><h2>Make video generation<br /><em>physically usable.</em></h2><p>PVBench is designed to help researchers move from “looks good” to “obeys the world.” Code and release materials will be linked here as they become available.</p></div><div class="release-actions"><a class="button button-primary" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a><a class="button button-ghost is-pending" href="#citation">Paper &amp; BibTeX <span>↓</span></a></div></div>
+      <div class="release-card"><div><span class="section-kicker">OPEN RESEARCH</span><h2>Make video generation<br /><em>physically usable.</em></h2><p>PVBench is designed to help researchers move from “looks good” to “obeys the world.” Code, prompt sets, and the calibration protocol will be linked here as they become available.</p></div><div class="release-actions"><a class="button button-primary" href="https://github.com/KSZG-11/PVBench" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a><a class="button button-ghost is-pending" href="#citation">Paper &amp; BibTeX <span>↓</span></a></div></div>
     </section>
 
     <section id="citation" class="section shell citation-section">
