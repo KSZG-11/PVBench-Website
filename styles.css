@@ -51,3 +51,7 @@ body{font-size:16px}.brand{gap:0}.site-nav nav{font-size:15px;gap:27px}.nav-cta{
 
 /* Keep every leaderboard score visible on desktop and apply one consistent type system to model names. */
 .results-leaderboard .leaderboard-table{min-width:0;width:100%;table-layout:auto}.results-leaderboard .leaderboard-table td{font:15px 'Space Grotesk',system-ui,sans-serif;text-align:center;color:#253954;font-variant-numeric:tabular-nums}.results-leaderboard .leaderboard-table td.config-name{font:600 12px 'DM Mono',monospace;color:#52708d;text-align:left}.results-leaderboard .leaderboard-table td.model-name{font:600 15px 'Space Grotesk',system-ui,sans-serif;color:#253954;text-align:left;white-space:nowrap}.results-leaderboard .leaderboard-table td strong{font:700 15px 'Space Grotesk',system-ui,sans-serif;color:#1f62d5}.results-leaderboard .leaderboard-table td sup{font-family:'DM Mono',monospace}@media(max-width:1100px){.results-leaderboard .leaderboard-table td.model-name{white-space:normal;word-break:keep-all}}
+
+/* Center the benchmark taxonomy figure, then place its layer descriptions below. */
+.taxonomy-layout{display:flex;flex-direction:column;align-items:stretch;gap:32px}.taxonomy-visual{order:1;width:100%;max-width:1180px;margin:0 auto;padding:16px}.taxonomy-copy{order:2;width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.taxonomy-copy .layer-row{min-height:154px}
+@media(max-width:900px){.taxonomy-copy{grid-template-columns:1fr}.taxonomy-copy .layer-row{min-height:0}}
