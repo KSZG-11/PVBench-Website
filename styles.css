@@ -58,3 +58,6 @@ body{font-size:16px}.brand{gap:0}.site-nav nav{font-size:15px;gap:27px}.nav-cta{
 
 /* Readability, complete navigation, and consistent layer interactions. */
 .hero-authors{font-size:17px;line-height:1.8}.hero-authors span{font-size:15px}.taxonomy-copy .layer-row{cursor:pointer;transition:background .25s,transform .25s,box-shadow .25s,border-color .25s}.taxonomy-copy .layer-row:hover,.taxonomy-copy .layer-row.active{background:#ffffff16;transform:translateY(-6px);box-shadow:0 14px 30px #0004}.taxonomy-copy .layer-row.physical.active{border-color:#c9a9ff66;box-shadow:0 14px 30px #0005}.taxonomy-methods{grid-column:1/-1;margin-top:2px;padding:18px 20px;border:1px solid #ffffff18;border-radius:12px;background:#ffffff08;color:#9eb3c8;text-align:center}.taxonomy-methods .method-label{display:block;margin-bottom:8px;font:12px 'DM Mono';letter-spacing:.13em;color:#77e4ca}.taxonomy-methods p{margin:0;font-size:15px;line-height:1.55}.taxonomy-methods strong{color:#e9f7ff;font-weight:600}@media(max-width:560px){.hero-authors{font-size:15px}.hero-authors span{font-size:14px}.taxonomy-methods{padding:16px}.taxonomy-methods p{font-size:14px}}
+
+/* Prompt distribution figure added from the paper's Figure 3. */
+.pipeline-card + .pipeline-card{margin-top:24px}
