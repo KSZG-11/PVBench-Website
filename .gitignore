@@ -1,3 +1,6 @@
 .DS_Store
 Thumbs.db
 *.tmp
+
+# Comparison videos are hosted in the Hugging Face dataset.
+assets/videos/

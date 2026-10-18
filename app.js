@@ -51,6 +51,7 @@
   const prompt = document.getElementById('comparison-prompt');
   const focusCopy = document.getElementById('comparison-focus-copy');
   const modelGrid = document.getElementById('comparison-model-grid');
+  const comparisonVideoBase = 'https://huggingface.co/datasets/KSZG/PVBench-Web-Video/resolve/main';
   const indexGrid = document.getElementById('case-index-grid');
   const modeButtons = comparison.querySelectorAll('[data-modality]');
   let current = 0;
@@ -77,7 +78,7 @@
     video.loop = true;
     video.preload = 'auto';
     video.playsInline = true;
-    video.src = `assets/videos/${model.assetDir}/${modality.toUpperCase()}/${item.promptId}.mp4`;
+    video.src = `${comparisonVideoBase}/${model.assetDir}/${modality.toUpperCase()}/${item.promptId}.mp4`;
     video.setAttribute('aria-label', `${model.name} ${modality.toUpperCase()} comparison video`);
     frame.appendChild(video);
     requestAnimationFrame(() => video.play().catch(() => {}));

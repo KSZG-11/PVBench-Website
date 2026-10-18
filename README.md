@@ -14,4 +14,4 @@ Open `index.html` directly, or serve this folder with any static HTTP server. Th
 - Interactive T2V/I2V comparison across 25 physical dimensions and five models
 - Citation and release links
 
-The website repository contains the presentation assets required by the static page and follows the project release policy.
+Comparison videos are served from the public [PVBench-Web-Video dataset](https://huggingface.co/datasets/KSZG/PVBench-Web-Video); the page itself remains a static GitHub Pages site.
