@@ -56,6 +56,33 @@
   const modeButtons = comparison.querySelectorAll('[data-modality]');
   let current = 0;
   let modality = 't2v';
+  let comparisonVisible = false;
+
+  const loadVideos = () => {
+    if (!comparisonVisible) return;
+    [...modelGrid.querySelectorAll('video[data-src]')].forEach((video, index) => {
+      window.setTimeout(() => {
+        if (!video.isConnected || video.src) return;
+        video.src = video.dataset.src;
+        video.preload = 'metadata';
+        video.load();
+        video.play().catch(() => {});
+      }, index * 180);
+    });
+  };
+
+  if ('IntersectionObserver' in window) {
+    const comparisonObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        comparisonVisible = true;
+        loadVideos();
+        comparisonObserver.disconnect();
+      }
+    }, { rootMargin: '360px 0px' });
+    comparisonObserver.observe(comparison);
+  } else {
+    comparisonVisible = true;
+  }
 
   const makeModelCard = (model, item) => {
     const card = document.createElement('article');
@@ -76,12 +103,11 @@
     video.autoplay = true;
     video.muted = true;
     video.loop = true;
-    video.preload = 'auto';
+    video.preload = 'none';
     video.playsInline = true;
-    video.src = `${comparisonVideoBase}/${model.assetDir}/${modality.toUpperCase()}/${item.promptId}.mp4`;
+    video.dataset.src = `${comparisonVideoBase}/${model.assetDir}/${modality.toUpperCase()}/${item.promptId}.mp4`;
     video.setAttribute('aria-label', `${model.name} ${modality.toUpperCase()} comparison video`);
     frame.appendChild(video);
-    requestAnimationFrame(() => video.play().catch(() => {}));
 
     const meta = document.createElement('div');
     meta.className = 'video-meta';
@@ -98,6 +124,7 @@
 
   const renderModelCards = (item) => {
     modelGrid.replaceChildren(...models.map((model) => makeModelCard(model, item)));
+    loadVideos();
   };
 
   cases.forEach((item, index) => {
