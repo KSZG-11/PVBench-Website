@@ -52,6 +52,7 @@
   const focusCopy = document.getElementById('comparison-focus-copy');
   const modelGrid = document.getElementById('comparison-model-grid');
   const comparisonVideoBase = 'https://huggingface.co/datasets/KSZG/PVBench-Web-Video/resolve/main';
+  // const comparisonVideoBase = 'assets/videos';
   const indexGrid = document.getElementById('case-index-grid');
   const modeButtons = comparison.querySelectorAll('[data-modality]');
   let current = 0;
