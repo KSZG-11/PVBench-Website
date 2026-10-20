@@ -61,3 +61,40 @@ body{font-size:16px}.brand{gap:0}.site-nav nav{font-size:15px;gap:27px}.nav-cta{
 
 /* Prompt distribution figure added from the paper's Figure 3. */
 .pipeline-card + .pipeline-card{margin-top:24px}
+
+
+/* Clear, premium navigation while scrolling. */
+.site-nav{background:transparent;isolation:isolate}
+.site-nav::before{content:"";position:fixed;inset:0 0 auto;height:84px;z-index:-1;background:rgba(5,12,24,.94);backdrop-filter:blur(18px) saturate(145%);-webkit-backdrop-filter:blur(18px) saturate(145%);border-bottom:1px solid rgba(151,190,223,.16);box-shadow:0 10px 30px rgba(0,0,0,.16)}
+.site-nav .brand{display:flex;align-items:baseline;gap:0;font-size:23px;font-weight:700;letter-spacing:-.075em;line-height:1;color:#f4f8ff;text-shadow:0 0 22px rgba(85,220,255,.16)}
+.site-nav .brand-pv{color:#65dcff}
+.site-nav .brand-bench{color:#f2f7ff}
+.site-nav nav{color:#c5d5e6}
+.site-nav nav a{position:relative;color:#c5d5e6;font-weight:500;transition:color .2s ease}
+.site-nav nav a:hover{color:#70e3ff}
+.site-nav nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;border-radius:2px;background:linear-gradient(90deg,#56ddff,#a88aff);transition:right .2s ease}
+.site-nav nav a:hover::after{right:0}
+.site-nav .nav-cta{color:#eaf6ff;background:rgba(255,255,255,.07);border-color:rgba(191,222,245,.3);transition:background .2s,border-color .2s,transform .2s}
+.site-nav .nav-cta:hover{background:rgba(93,216,255,.12);border-color:rgba(93,216,255,.55);transform:translateY(-1px)}
+.site-nav .nav-cta span{color:#70e3ff}
+@media(max-width:900px){.site-nav::before{height:84px}.site-nav .brand{font-size:21px}}
+
+
+/* Distinctive PVBench wordmark: technical P, expressive V, refined Bench. */
+.site-nav .brand{gap:0;letter-spacing:-.06em}
+.site-nav .brand-p{font-family:'Space Grotesk',sans-serif;font-weight:700;color:#69e2ff;text-shadow:0 0 18px rgba(89,218,255,.38)}
+.site-nav .brand-v{margin-left:-.025em;font-family:Georgia,'Times New Roman',serif;font-size:1.16em;font-style:italic;font-weight:700;letter-spacing:-.12em;color:#b49aff;text-shadow:0 0 18px rgba(180,154,255,.3);transform:translateY(-.015em)}
+.site-nav .brand-bench{margin-left:.10em;font-family:'Space Grotesk',sans-serif;font-size:.91em;font-weight:600;letter-spacing:-.045em;color:#f5f8ff}
+
+
+/* Author layout: six names on row one, two corresponding contacts on row two. */
+.hero-paper-info .hero-authors{margin:22px auto 0;text-align:center;font-size:16px;line-height:1.8;color:#c5d5e6}
+.author-row{display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;column-gap:19px;row-gap:2px}
+.author-row>span{white-space:nowrap}
+.author-row-last{margin-top:1px;column-gap:25px}
+.author-affiliations{margin-top:7px;color:#91a9be;font-size:.88em}
+.author-email{position:relative;top:-.38em;margin-left:2px;font-size:.78em}
+.author-email a{color:#71e2ff;text-decoration:none;transition:color .2s,text-shadow .2s}
+.author-email a:hover{color:#d5c2ff;text-shadow:0 0 9px #9f7cff}
+@media(max-width:900px){.hero-paper-info .hero-authors{font-size:14px}.author-row{column-gap:13px}}
+@media(max-width:560px){.hero-paper-info .hero-authors{font-size:12px}.author-row{column-gap:9px}.author-affiliations{font-size:10px;line-height:1.55}}
